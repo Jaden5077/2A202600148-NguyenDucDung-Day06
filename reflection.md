@@ -10,23 +10,27 @@
 - Hỗ trợ tech cho các thành viên khác (Trí, Bảo), bao gồm hướng dẫn cài đặt hệ thống, hướng dẫn vibe code.
 - Kết quả: dù pipeline với whisper large chạy được nhưng lại không đủ nhanh, nhóm sau đó đã chuyển sang giải pháp khác, kết hợp nhiều model.
 
-## 3. Đóng góp khác
+## 3. SPEC mạnh/yếu
+- Mạnh nhất: failure modes — khi AI transcribe sai, mà hoá ra rất phổ biến, thì user có thể tử chối.
+- Yếu nhất: metrics - dù mục tiêu là giảm các bước đặt xe, nhưng thực tế demo cho thấy nó lại tăng thời gian chờ của user.
+
+## 4. Đóng góp khác
 - Ghi âm giọng nói để test model
 
-## 4. Điều học được
+## 5. Điều học được
 Trước buổi chiều vẫn nghĩ là dư dả thời gian để ghép mọi module của hệ thống với nhau.
 Hệ thống trông có vẻ chạy được, nhưng cần phải nghĩ đến un-happy case, ví dụ như thiếu thông tin. Luôn cần cơ chế error catching.
 Để thời gian chết khá nhiều.
 Thành viên khác có thể bị kẹt, nhưng họ cũng có thể không nói.
 Model lớn có precision cao nhưng chậm, model nhỏ thì nhanh nhưng precision thấp. Cần có cơ chế fallback khác, ví dụ như một model khác, hoặc bằng UX. (Voice to text sai gây khó chịu cho user)
 
-## 5. Nếu làm lại
+## 6. Nếu làm lại
 Thu nhỏ scope hơn. Một số case khó ngoài scope thì nên hardcode.
 Cần quan tâm teammate hơn.
 Cần ghép các module thành một hệ thống sớm nhất có thể, để tìm xem điểm nghẽn nằm ở đâu. 
 Cần log code, tạo file test, error catch đầy đủ.
 Tự test các phần khác của teammate để giúp tìm ra lỗi từ sớm.
 
-## 6. AI giúp gì / AI sai gì
+## 7. AI giúp gì / AI sai gì
 - **Giúp:** gợi ý ý tưởng, viết tài liệu, polish đề tài, vibe code. Về tính năng: voice to text, text to json.
 - **Sai/mislead:** AI tạo ra tính năng nhưng không fix được lỗi trong tính năng đó; mỗi người vibe code một kiểu trên cùng một file, bị conflict không merge được; voice to text nhận diện sai từ rất nhiều.
